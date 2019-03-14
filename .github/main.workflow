@@ -4,7 +4,7 @@ workflow "generate gcode" {
 }
 
 action "esp8266 huzzah cover" {
-  uses = "davidk/slic3r-action/gcode@updates"
+  uses = "davidk/slic3r-action/gcode@master"
   args = "cover.stl"
   secrets = ["GITHUB_TOKEN"]
   env = {
@@ -14,7 +14,7 @@ action "esp8266 huzzah cover" {
 }
 
 action "esp8266 huzzah case" {
-  uses = "davidk/slic3r-action/gcode@updates"
+  uses = "davidk/slic3r-action/gcode@master"
   args = "case_with_bottom_cutout.stl"
   secrets = ["GITHUB_TOKEN"]
   env = {
@@ -23,7 +23,7 @@ action "esp8266 huzzah case" {
 }
 
 action "screw funnel" {
-  uses = "davidk/slic3r-action/gcode@updates"
+  uses = "davidk/slic3r-action/gcode@master"
   args = "screw-funnel.stl"
   secrets = ["GITHUB_TOKEN"]
   env = {
