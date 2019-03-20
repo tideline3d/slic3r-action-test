@@ -1,5 +1,5 @@
 workflow "generate gcode" {
-  resolves = ["esp8266 huzzah cover", "esp8266 huzzah case", "screw funnel"]
+  resolves = ["esp8266 huzzah cover", "esp8266 huzzah case", "screw funnel", "battery case"]
   on = "push"
 }
 
@@ -21,6 +21,16 @@ action "esp8266 huzzah case" {
     SLICE_CFG = "config.ini"
   }
 }
+
+action "battery case" {
+  uses = "davidk/slic3r-action/gcode@master"
+  args = "feather-battery.stl"
+  secrets = ["GITHUB_TOKEN"]
+  env = {
+    SLICE_CFG = "config.ini"
+  }
+}
+
 
 action "screw funnel" {
   uses = "davidk/slic3r-action/gcode@master"
