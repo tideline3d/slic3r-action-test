@@ -1,6 +1,6 @@
 workflow "generate gcode" {
   resolves = ["esp8266 huzzah cover", "esp8266 huzzah case", "screw funnel", "battery case"]
-  on = "push"
+  on = "project_card"
 }
 
 action "esp8266 huzzah cover" {
@@ -30,7 +30,6 @@ action "battery case" {
     SLICE_CFG = "config.ini"
   }
 }
-
 
 action "screw funnel" {
   uses = "davidk/slic3r-action/gcode@master"
